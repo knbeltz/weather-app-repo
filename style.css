@@ -1,0 +1,364 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:aqua;
+}
+
+.weather-app {
+  max-width: 37.5em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 80vw;
+  max-height: 35em;
+  max-width: 37.5em;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 3em 2.5em;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 37.5em;
+  border-radius: 0.62em;
+  box-shadow: 0 1.253em 1.8em rgba(8,21,65);
+}
+
+.search {
+  justify-content: flex;
+  flex-direction: row;
+}
+
+.search-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.search-wrapper #city-input {
+  margin-right: 2em;
+  width: 15em;
+  font-size: 1em;
+  padding: 0.8em 0;
+  border: none;
+  border-radius: 0; 
+  border-bottom: 2px solid aqua;
+  outline: none;
+}
+
+.search-wrapper #country-code-input {
+  margin-right: 1.25em;
+  width: 6em;
+  font-size: 1em;
+  padding: 0.83em 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid aqua; 
+  outline: none;
+}
+
+#search-button {
+  font-size: 1em;
+  background-color: aqua;
+  color: #ffff;
+  padding: 0.83em 1.5em;
+  border: none;
+  border-radius: 1.5em;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: rgb(55, 212, 255); 
+}
+
+.error-msg-div {
+  margin-top: 2em;
+}
+
+.error-msg-div p {
+  font-size: 1em;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+.error-msg-div a {
+  font-size: 1em;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+.current-weather-container {
+  background-color: #ffffff;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 37.5em;
+  border-radius: 0.62em;
+  box-shadow: 0 1.253em 1.8em rgba(8,21,65);
+  margin-bottom: 20em;
+}
+
+.metric-switch-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  margin-top: 0.5em;
+}
+
+.metric-text {
+  align-self: center;
+  margin-right: 0.5em;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.metric-button {
+  background-color: #d2d2d2;
+  width: 3em;
+  height: 1.5em;
+  border-radius: 3em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+  margin-right: 1em;
+}
+
+.metric-button::before {
+  position: absolute;
+  content: '';
+  background-color: white;
+  width: 1.45em;
+  height: 1.45em;
+  border-radius: 1.5em;
+  margin: 0.025em;
+  transition: 0.2s;
+}
+
+#check:checked + .metric-button {
+  background-color: aqua;
+}
+
+#check:checked + .metric-button::before {
+  transform: translateX(1.5em);
+}
+
+#check {
+  display: none;
+}
+
+
+.city-name-div {
+  width: 100%;
+  text-align: center;
+
+}
+
+.city-name {
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.current-weather-condition{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.current-weather-condition-img {
+  height: 10em;
+  width: 10em;
+}
+
+.current-weather-condition-name { 
+  font-family: Poppins, Rubik,Roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.current-temp-windspeed {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+}
+.current-temp{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-temp-icon {
+  width: 1.5em;
+  height: 3em;
+}
+
+.current-temp-info{
+  text-align: center;
+  width: 40%;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+}
+
+.current-windspeed {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+
+.current-windspeed-icon {
+  width: 1.5em;
+  height: 3em;
+}
+
+.current-windspeed-info {
+  text-align: center;
+  width: 50%;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.4em;
+}
+
+.current-humidity-visibility {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.5em;
+}
+
+.current-humidity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+
+.current-humidity-icon {
+  width: 1.5em;
+  height: 3em;
+}
+
+.current-humidity-info {
+  text-align: center;
+  width: 40%;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+}
+
+.current-visibility {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+
+.current-visibilty-icon {
+  width: 1.5em;
+  height: 3em;
+}
+
+.current-visibility-info {
+  text-align: center;
+  width: 50%;
+  font-family: Poppins, Rubik, Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+}
+
+.footer-spacing {
+  height: 5em;
+}
+
+@media (max-width: 720px) {
+  body {
+    height: 125vh;
+  }
+
+  .weather-app{
+    padding-bottom: 5em;
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  .search-wrapper {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.25em;
+    width: 100%;
+  }
+  .search-wrapper #city-input {
+    width: 100%;
+  }
+  .search-wrapper #country-code-input {
+    width: 100%;
+  }
+  #search-button {
+    margin-top: 1em;
+    align-self: center;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .current-temp-windspeed {
+    flex-direction: column;
+  }
+  .current-temp {
+    width: 100%;
+    justify-content: center;
+  }
+  .current-temp-info {
+    width: 50%;
+  }
+  .current-windspeed {
+    width: 100%;
+    justify-content: center;
+  }
+  .current-humidity-visibility {
+    flex-direction: column;
+  }
+  .current-humidity {
+    width: 100%;
+    justify-content: center;
+  }
+  .current-humidity-info {
+    width: 50%;
+  }
+  .current-visibility {
+    width: 100%;
+    justify-content: center;
+  } 
+}
+
+@media (max-width: 400px) {
+  body {
+    height: 150vh;
+  }
+  .search-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .search-wrapper #city-input {
+    width: 100%;
+  }
+  .search-wrapper #country-code-input {
+    width: 100%;
+  }
+
+  .metric-switch-div {
+    align-items: center;
+  }
+  .metric-text {
+    display: none;
+  } 
+}
+
+
